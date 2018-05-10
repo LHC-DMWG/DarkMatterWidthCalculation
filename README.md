@@ -1,5 +1,7 @@
 # DarkMatterWidthCalculator
 
+Code originally written (and still largely) by Andy Nelson (see [here](https://github.com/noslenwerdna/DarkMatterWidthCalculator))
+
         Calculates the total width for s-channel mediated dark matter:
         q              dark matter
          \\   med.   //
