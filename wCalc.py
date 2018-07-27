@@ -250,13 +250,14 @@ if __name__ == '__main__':
         quit(parser)
 
     if args.type != 'tchan':
-        print 'full mediator width={0:0.3e} GeV'.format(
-            swCalc(args.type, args.gQ, args.gL, args.gDM, args.mMed, args.mDM))
+        widthGeV = swCalc(args.type, args.gQ, args.gL, args.gDM, args.mMed, args.mDM)
+        print 'full mediator width={0:0.3e} GeV ({1:5.2f}%)'.format(widthGeV,widthGeV/args.mMed*100.)
+            
     else: # tchannel 
         width = twCalc(args.type, args.gQ, args.gL, args.gDM, args.mMed, args.mDM)
-        print 'eta_{0} width={1:0.3e} GeV'.format('u', width['u'])
-        print 'eta_{0} width={1:0.3e} GeV'.format('d', width['d'])
-        print 'eta_{0} width={1:0.3e} GeV'.format('c', width['c'])
-        print 'eta_{0} width={1:0.3e} GeV'.format('s', width['s'])
-        print 'eta_{0} width={1:0.3e} GeV'.format('t', width['t'])
-        print 'eta_{0} width={1:0.3e} GeV'.format('b', width['b'])
+        print 'eta_{0} width={1:0.3e} GeV ({2:5.2f}%)'.format('u', width['u'], width['u']/args.mMed)
+        print 'eta_{0} width={1:0.3e} GeV ({2:5.2f}%)'.format('d', width['d'], width['d']/args.mMed)
+        print 'eta_{0} width={1:0.3e} GeV ({2:5.2f}%)'.format('c', width['c'], width['c']/args.mMed)
+        print 'eta_{0} width={1:0.3e} GeV ({2:5.2f}%)'.format('s', width['s'], width['s']/args.mMed)
+        print 'eta_{0} width={1:0.3e} GeV ({2:5.2f}%)'.format('t', width['t'], width['t']/args.mMed)
+        print 'eta_{0} width={1:0.3e} GeV ({2:5.2f}%)'.format('b', width['b'], width['b']/args.mMed)
